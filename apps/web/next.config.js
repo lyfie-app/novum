@@ -4,43 +4,43 @@ const nextConfig = {
     return [
       {
         source: "/github",
-        destination: "https://github.com/steven-tey/novel",
+        destination: "https://github.com/lyfie-app/novum",
         permanent: true,
       },
       {
         source: "/sdk",
-        destination: "https://www.npmjs.com/package/novel",
+        destination: "https://www.npmjs.com/package/novum",
         permanent: true,
       },
       {
         source: "/npm",
-        destination: "https://www.npmjs.com/package/novel",
+        destination: "https://www.npmjs.com/package/novum",
         permanent: true,
       },
       {
         source: "/svelte",
-        destination: "https://github.com/tglide/novel-svelte",
+        destination: "https://github.com/tglide/novum-svelte",
         permanent: false,
       },
       {
         source: "/vue",
-        destination: "https://github.com/naveennaidu/novel-vue",
+        destination: "https://github.com/naveennaidu/novum-vue",
         permanent: false,
       },
       {
         source: "/vscode",
         destination:
-          "https://marketplace.visualstudio.com/items?itemName=bennykok.novel-vscode",
+          "https://marketplace.visualstudio.com/items?itemName=bennykok.novum-vscode",
         permanent: false,
       },
       {
         source: "/feedback",
-        destination: "https://github.com/steven-tey/novel/issues",
+        destination: "https://github.com/lyfie-app/novum/issues",
         permanent: true,
       },
       {
         source: "/deploy",
-        destination: "https://vercel.com/templates/next.js/novel",
+        destination: "https://vercel.com/templates/next.js/novum",
         permanent: true,
       },
     ];

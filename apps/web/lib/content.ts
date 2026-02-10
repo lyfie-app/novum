@@ -4,7 +4,7 @@ export const defaultEditorContent = {
     {
       type: "heading",
       attrs: { level: 2 },
-      content: [{ type: "text", text: "Introducing Novel" }],
+      content: [{ type: "text", text: "Introducing novum" }],
     },
     {
       type: "paragraph",
@@ -15,12 +15,12 @@ export const defaultEditorContent = {
             {
               type: "link",
               attrs: {
-                href: "https://github.com/steven-tey/novel",
+                href: "https://github.com/lyfie-app/novum",
                 target: "_blank",
               },
             },
           ],
-          text: "Novel",
+          text: "novum",
         },
         {
           type: "text",
@@ -64,7 +64,7 @@ export const defaultEditorContent = {
     {
       type: "codeBlock",
       attrs: { language: null },
-      content: [{ type: "text", text: "npm i novel" }],
+      content: [{ type: "text", text: "npm i novum" }],
     },
     {
       type: "heading",
@@ -289,7 +289,7 @@ export const defaultEditorContent = {
                     {
                       type: "link",
                       attrs: {
-                        href: "https://github.com/steven-tey/novel",
+                        href: "https://github.com/lyfie-app/novum",
                         target: "_blank",
                       },
                     },
@@ -314,7 +314,7 @@ export const defaultEditorContent = {
                     {
                       type: "link",
                       attrs: {
-                        href: "https://www.npmjs.com/package/novel",
+                        href: "https://www.npmjs.com/package/novum",
                         target: "_blank",
                       },
                     },
@@ -338,7 +338,7 @@ export const defaultEditorContent = {
                     {
                       type: "link",
                       attrs: {
-                        href: "https://vercel.com/templates/next.js/novel",
+                        href: "https://vercel.com/templates/next.js/novum",
                         target: "_blank",
                       },
                     },

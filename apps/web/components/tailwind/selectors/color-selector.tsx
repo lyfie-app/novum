@@ -11,7 +11,7 @@ export interface BubbleColorMenuItem {
 const TEXT_COLORS: BubbleColorMenuItem[] = [
   {
     name: "Default",
-    color: "var(--novel-black)",
+    color: "var(--novum-black)",
   },
   {
     name: "Purple",
@@ -50,39 +50,39 @@ const TEXT_COLORS: BubbleColorMenuItem[] = [
 const HIGHLIGHT_COLORS: BubbleColorMenuItem[] = [
   {
     name: "Default",
-    color: "var(--novel-highlight-default)",
+    color: "var(--novum-highlight-default)",
   },
   {
     name: "Purple",
-    color: "var(--novel-highlight-purple)",
+    color: "var(--novum-highlight-purple)",
   },
   {
     name: "Red",
-    color: "var(--novel-highlight-red)",
+    color: "var(--novum-highlight-red)",
   },
   {
     name: "Yellow",
-    color: "var(--novel-highlight-yellow)",
+    color: "var(--novum-highlight-yellow)",
   },
   {
     name: "Blue",
-    color: "var(--novel-highlight-blue)",
+    color: "var(--novum-highlight-blue)",
   },
   {
     name: "Green",
-    color: "var(--novel-highlight-green)",
+    color: "var(--novum-highlight-green)",
   },
   {
     name: "Orange",
-    color: "var(--novel-highlight-orange)",
+    color: "var(--novum-highlight-orange)",
   },
   {
     name: "Pink",
-    color: "var(--novel-highlight-pink)",
+    color: "var(--novum-highlight-pink)",
   },
   {
     name: "Gray",
-    color: "var(--novel-highlight-gray)",
+    color: "var(--novum-highlight-gray)",
   },
 ];
 

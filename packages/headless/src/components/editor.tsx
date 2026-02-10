@@ -4,7 +4,7 @@ import { Provider } from "jotai";
 import { forwardRef, useRef } from "react";
 import type { FC, ReactNode } from "react";
 import tunnel from "tunnel-rat";
-import { novelStore } from "../utils/store";
+import { novumStore } from "../utils/store";
 import { EditorCommandTunnelContext } from "./editor-command";
 
 export interface EditorProps {
@@ -20,7 +20,7 @@ export const EditorRoot: FC<EditorRootProps> = ({ children }) => {
   const tunnelInstance = useRef(tunnel()).current;
 
   return (
-    <Provider store={novelStore}>
+    <Provider store={novumStore}>
       <EditorCommandTunnelContext.Provider value={tunnelInstance}>{children}</EditorCommandTunnelContext.Provider>
     </Provider>
   );
