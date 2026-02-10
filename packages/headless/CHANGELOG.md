@@ -1,5 +1,11 @@
 # [0.2.0](https://github.com/steven-tey/novel/compare/v0.1.0...v0.2.0) (2025-01-17)
 
+## 2.0.0
+
+### Major Changes
+
+- 57d0a42: default fork
+
 ## 1.0.0
 
 ### Major Changes
