@@ -1,4 +1,4 @@
-import { EditorBubble, removeAIHighlight, useEditor } from "novum";
+import { EditorBubble, removeAIHighlight, useEditor } from "@lyfie/novum";
 import { Fragment, type ReactNode, useEffect } from "react";
 import { Button } from "../ui/button";
 import Magic from "../ui/icons/magic";

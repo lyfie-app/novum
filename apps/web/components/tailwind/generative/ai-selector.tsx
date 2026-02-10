@@ -4,8 +4,8 @@ import { Command, CommandInput } from "@/components/tailwind/ui/command";
 
 import { useCompletion } from "ai/react";
 import { ArrowUp } from "lucide-react";
-import { useEditor } from "novum";
-import { addAIHighlight } from "novum";
+import { useEditor } from "@lyfie/novum";
+import { addAIHighlight } from "@lyfie/novum";
 import { useState } from "react";
 import Markdown from "react-markdown";
 import { toast } from "sonner";

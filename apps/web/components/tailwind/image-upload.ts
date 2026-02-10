@@ -1,4 +1,4 @@
-import { createImageUpload } from "novum";
+import { createImageUpload } from "@lyfie/novum";
 import { toast } from "sonner";
 
 const onUpload = (file: File) => {

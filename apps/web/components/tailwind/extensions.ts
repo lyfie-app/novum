@@ -21,7 +21,7 @@ import {
   UpdatedImage,
   UploadImagesPlugin,
   Youtube,
-} from "novum";
+} from "@lyfie/novum";
 
 import { cx } from "class-variance-authority";
 import { common, createLowlight } from "lowlight";
