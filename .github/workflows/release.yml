@@ -60,7 +60,7 @@ jobs:
 
       - name: 🏗️ Build
         id: build-the-mono-repo
-        run: pnpm build
+        run: pnpm build --filter=novum...
 
       - name: 📣 Publish to npm
         id: changesets
