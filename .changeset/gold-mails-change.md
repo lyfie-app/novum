@@ -1,6 +1,6 @@
 ---
-"novum": major
-"novum-demo-app": major
+"@lyfie/novum": major
+"@lyfie/novum-demo-app": major
 "tsconfig": major
 ---
 
