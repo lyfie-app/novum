@@ -29,19 +29,23 @@ jobs:
       - name: 🥡 Setup pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: latest
+          version: 9.5.0 
           run_install: false
 
       - name: 🧩 Install Dependencies
         run: pnpm install --no-frozen-lockfile
 
       - name: 🏗️ Build
-        run: pnpm build --filter=novum...
+        id: build-the-mono-repo
+        run: pnpm build --filter=@lyfie/novum...
 
       - name: 📣 Publish to npm
         uses: changesets/action@v1
         with:
           publish: pnpm publish:packages
+          version: HUSKY=0 pnpm version:packages
+          commit: "chore(release): version packages 🦋"
+          title: "chore(release): version packages 🦋"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ env.NPM_TOKEN }}
