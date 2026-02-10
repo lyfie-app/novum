@@ -1,14 +1,5 @@
-import { Fragment, type Node as PMNode } from "@tiptap/pm/model";
+import { Fragment, type Node } from "@tiptap/pm/model";
 import type { EditorInstance } from "../components";
-
-// --- TypeScript augmentation for markdown storage ---
-declare module "@tiptap/react" {
-  interface Storage {
-    markdown: {
-      serializer: { serialize: (doc: any) => string };
-    };
-  }
-}
 
 export function isValidUrl(url: string) {
   try {
@@ -30,29 +21,24 @@ export function getUrlFromString(str: string) {
   }
 }
 
-/**
- * Get the text before a given position in markdown format
- */
+// Get the text before a given position in markdown format
 export const getPrevText = (editor: EditorInstance, position: number) => {
-  const nodes: PMNode[] = []; // explicitly type the array
-
+  const nodes: Node[] = [];
   editor.state.doc.forEach((node, pos) => {
-    if (pos >= position) return false; // stop iteration
+    if (pos >= position) return false;
     nodes.push(node);
     return true;
   });
-
   const fragment = Fragment.fromArray(nodes);
-  const doc = editor.state.doc.type.createAndFill(undefined, fragment);
+  const doc = editor.state.doc.copy(fragment);
 
-  return editor.storage.markdown?.serializer.serialize(doc) ?? "";
+  return editor.storage.markdown.serializer.serialize(doc) as string;
 };
 
-/**
- * Get all content from the editor in markdown format
- */
+// Get all content from the editor in markdown format
 export const getAllContent = (editor: EditorInstance) => {
-  const doc = editor.state.doc;
+  const fragment = editor.state.doc.content;
+  const doc = editor.state.doc.copy(fragment);
 
-  return editor.storage.markdown?.serializer.serialize(doc) ?? "";
+  return editor.storage.markdown.serializer.serialize(doc) as string;
 };

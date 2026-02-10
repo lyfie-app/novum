@@ -1,12 +1,8 @@
 {
-  "name": "@lyfie/novum",
-  "version": "0.2.0",
-  "description": "Notion-style WYSIWYG editor",
+  "name": "novum",
+  "version": "1.0.0",
+  "description": "Notion-style WYSIWYG editor with AI-powered autocompletions",
   "license": "Apache-2.0",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -19,12 +15,11 @@
     "typecheck": "tsc --noEmit",
     "build": "tsup",
     "lint": "biome lint ./src",
-    "format": "biome format ./src"
+    "format": "biome format ./src "
   },
   "sideEffects": false,
   "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18"
+    "react": ">=18"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.1",
@@ -46,6 +41,7 @@
     "@tiptap/react": "^2.11.2",
     "@tiptap/starter-kit": "^2.11.2",
     "@tiptap/suggestion": "^2.11.2",
+    "@types/node": "^22.10.6",
     "cmdk": "^1.0.4",
     "jotai": "^2.11.0",
     "react-markdown": "^9.0.3",
@@ -60,9 +56,8 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@types/katex": "^0.16.7",
-    "@types/node": "^22.10.6",
     "@types/react": "^18.2.55",
-    "@types/react-dom": "^18.2.19",
+    "@types/react-dom": "18.2.19",
     "tsconfig": "workspace:*",
     "tsup": "^8.3.5",
     "typescript": "^5.7.3"
@@ -78,8 +73,8 @@
   },
   "keywords": [
     "ai",
-    "novum",
     "novel",
+    "novum",
     "editor",
     "markdown",
     "nextjs",
