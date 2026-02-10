@@ -10,22 +10,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
 
+      - name: Configure npm auth
+        run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - name: Install dependencies
         run: npm install
 
       - name: Build packages
-        run: npm run build
+        run: npm run build:all
 
-      - name: Publish
-        run: npx changeset publish
+      - name: Version packages
+        run: npm run version:packages
+
+      - name: Publish packages
+        run: npm run publish:packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
