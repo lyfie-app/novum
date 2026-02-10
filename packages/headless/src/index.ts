@@ -3,7 +3,7 @@ export {
   EditorRoot,
   EditorContent,
   type EditorContentProps,
-  EditorBubble,
+  // EditorBubble,
   EditorBubbleItem,
   EditorCommand,
   EditorCommandList,

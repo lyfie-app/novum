@@ -162,6 +162,7 @@ export const Mathematics = Node.create<MathematicsOptions>({
       dom.addEventListener("click", (evt) => {
         if (editor.isEditable && typeof getPos === "function") {
           const pos = getPos();
+          if (pos === undefined) return;
           const nodeSize = node.nodeSize;
           editor.commands.setTextSelection({ from: pos, to: pos + nodeSize });
         }
