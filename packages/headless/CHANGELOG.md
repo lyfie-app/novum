@@ -1,5 +1,11 @@
 # @lyfie/novum
 
+## 0.2.0
+
+### Minor Changes
+
+- version bump
+
 ## 0.1.0
 
 ### Minor Changes
