@@ -1,8 +1,9 @@
 {
-  "name": "novel",
-  "version": "1.0.0",
-  "description": "Notion-style WYSIWYG editor with AI-powered autocompletions",
+  "name": "@lyfie/novum",
+  "version": "0.0.0",
+  "description": "Notion-style WYSIWYG editor",
   "license": "Apache-2.0",
+  "private": false,
   "type": "module",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
@@ -19,7 +20,8 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "react": ">=18"
+    "react": ">=18",
+    "react-dom": ">=18"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.1",
