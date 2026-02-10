@@ -14,58 +14,34 @@ env:
 jobs:
   release:
     name: 🚀 Release
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node-version: [lts/*]
-        pnpm-version: [latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
       - name: ⬇️ Checkout
-        id: checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: 🟢 Setup node
-        id: setup-node
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: lts/*
 
       - name: 🥡 Setup pnpm
-        id: setup-pnpm
         uses: pnpm/action-setup@v2
         with:
-          version: ${{ matrix.pnpm-version }}
+          version: latest
           run_install: false
 
-      - name: 🎈 Get pnpm store directory
-        id: get-pnpm-cache-dir
-        run: |
-          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
-
-      - name: 🔆 Cache pnpm modules
-        id: pnpm-cache
-        uses: actions/cache@v3
-        with:
-          path: ${{ steps.get-pnpm-cache-dir.outputs.pnpm_cache_dir }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
       - name: 🧩 Install Dependencies
-        id: install-dependencies
         run: pnpm install --no-frozen-lockfile
 
       - name: 🏗️ Build
-        id: build-the-mono-repo
         run: pnpm build --filter=novum...
 
       - name: 📣 Publish to npm
-        id: changesets
         uses: changesets/action@v1
         with:
           publish: pnpm publish:packages
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ env.NPM_TOKEN }}
