@@ -2,12 +2,12 @@ import { InputRule } from "@tiptap/core";
 import { Color } from "@tiptap/extension-color";
 import Highlight from "@tiptap/extension-highlight";
 import HorizontalRule from "@tiptap/extension-horizontal-rule";
-import TiptapImage from "@tiptap/extension-image";
+import Image from "@tiptap/extension-image";
 import TiptapLink from "@tiptap/extension-link";
 import Placeholder from "@tiptap/extension-placeholder";
 import { TaskItem } from "@tiptap/extension-task-item";
 import { TaskList } from "@tiptap/extension-task-list";
-import TextStyle from "@tiptap/extension-text-style";
+import { TextStyleKit } from '@tiptap/extension-text-style'
 import TiptapUnderline from "@tiptap/extension-underline";
 import StarterKit from "@tiptap/starter-kit";
 import { Markdown } from "tiptap-markdown";
@@ -71,10 +71,10 @@ export {
   StarterKit,
   TaskItem,
   TaskList,
-  TiptapImage,
+  Image,
   TiptapUnderline,
   MarkdownExtension,
-  TextStyle,
+  TextStyleKit,
   Color,
   HighlightExtension,
   CustomKeymap,

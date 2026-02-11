@@ -1,5 +1,16 @@
 import { Fragment, type Node } from "@tiptap/pm/model";
-import type { EditorInstance } from "../components";
+import type { Editor } from "@tiptap/core";
+
+// Helper to access the storage with types
+type MarkdownEditor = Editor & {
+  storage: {
+    markdown: {
+      serializer: {
+        serialize: (doc: any) => string;
+      };
+    };
+  };
+};
 
 export function isValidUrl(url: string) {
   try {
@@ -22,7 +33,7 @@ export function getUrlFromString(str: string) {
 }
 
 // Get the text before a given position in markdown format
-export const getPrevText = (editor: EditorInstance, position: number) => {
+export const getPrevText = (editor: MarkdownEditor, position: number) => {
   const nodes: Node[] = [];
   editor.state.doc.forEach((node, pos) => {
     if (pos >= position) return false;
@@ -36,7 +47,7 @@ export const getPrevText = (editor: EditorInstance, position: number) => {
 };
 
 // Get all content from the editor in markdown format
-export const getAllContent = (editor: EditorInstance) => {
+export const getAllContent = (editor: MarkdownEditor) => {
   const fragment = editor.state.doc.content;
   const doc = editor.state.doc.copy(fragment);
 

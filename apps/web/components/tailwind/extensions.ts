@@ -2,7 +2,6 @@ import {
   AIHighlight,
   CharacterCount,
   CodeBlockLowlight,
-  Color,
   CustomKeymap,
   GlobalDragHandle,
   HighlightExtension,
@@ -13,8 +12,8 @@ import {
   StarterKit,
   TaskItem,
   TaskList,
-  TextStyle,
-  TiptapImage,
+  TextStyleKit,
+  Image,
   TiptapLink,
   TiptapUnderline,
   Twitter,
@@ -38,7 +37,7 @@ const tiptapLink = TiptapLink.configure({
   },
 });
 
-const tiptapImage = TiptapImage.extend({
+const tiptapImage = Image.extend({
   addProseMirrorPlugins() {
     return [
       UploadImagesPlugin({
@@ -98,11 +97,7 @@ const starterKit = StarterKit.configure({
       class: cx("border-l-4 border-primary"),
     },
   },
-  codeBlock: {
-    HTMLAttributes: {
-      class: cx("rounded-md bg-muted text-muted-foreground border p-5 font-mono font-medium"),
-    },
-  },
+  codeBlock: false,
   code: {
     HTMLAttributes: {
       class: cx("rounded-md bg-muted  px-1.5 py-1 font-mono font-medium"),
@@ -115,6 +110,8 @@ const starterKit = StarterKit.configure({
     width: 4,
   },
   gapcursor: false,
+  link: false,
+  underline: false,
 });
 
 const codeBlockLowlight = CodeBlockLowlight.configure({
@@ -177,8 +174,7 @@ export const defaultExtensions = [
   TiptapUnderline,
   markdownExtension,
   HighlightExtension,
-  TextStyle,
-  Color,
+  TextStyleKit,
   CustomKeymap,
   GlobalDragHandle,
 ];

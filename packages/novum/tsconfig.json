@@ -3,6 +3,8 @@
   "include": ["./src/**/*"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
+    "moduleResolution": "Bundler", 
+    "module": "ESNext",
     "declarationMap": false,
     "outDir": "dist"
   }

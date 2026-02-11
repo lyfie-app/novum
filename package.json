@@ -68,5 +68,12 @@
         100
       ]
     }
+  },
+  "pnpm": {
+    "overrides": {
+      "@tiptap/core": "^3.19.0",
+      "@tiptap/react": "^3.19.0",
+      "@tiptap/pm": "^3.19.0"
+    }
   }
 }

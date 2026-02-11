@@ -14,6 +14,8 @@ import {
   handleImageDrop,
   handleImagePaste,
 } from "@lyfie/novum";
+
+
 import { useEffect, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { defaultExtensions } from "./extensions";
@@ -35,8 +37,7 @@ const extensions = [...defaultExtensions, slashCommand];
 const TailwindAdvancedEditor = () => {
   const [initialContent, setInitialContent] = useState<null | JSONContent>(null);
   const [saveStatus, setSaveStatus] = useState("Saved");
-  const [charsCount, setCharsCount] = useState();
-
+  const [charsCount, setCharsCount] = useState<number>(0);
   const [openNode, setOpenNode] = useState(false);
   const [openColor, setOpenColor] = useState(false);
   const [openLink, setOpenLink] = useState(false);
@@ -54,11 +55,13 @@ const TailwindAdvancedEditor = () => {
   };
 
   const debouncedUpdates = useDebouncedCallback(async (editor: EditorInstance) => {
+    const mdEditor = editor as any;   
     const json = editor.getJSON();
     setCharsCount(editor.storage.characterCount.words());
     window.localStorage.setItem("html-content", highlightCodeblocks(editor.getHTML()));
     window.localStorage.setItem("novum-content", JSON.stringify(json));
-    window.localStorage.setItem("markdown", editor.storage.markdown.getMarkdown());
+    const markdown = mdEditor.storage.markdown.getMarkdown();
+    window.localStorage.setItem("markdown", markdown);
     setSaveStatus("Saved");
   }, 500);
 

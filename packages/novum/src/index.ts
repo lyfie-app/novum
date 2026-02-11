@@ -2,7 +2,6 @@
 export {
   EditorRoot,
   EditorContent,
-  type EditorContentProps,
   EditorBubble,
   EditorBubbleItem,
   EditorCommand,
@@ -10,9 +9,17 @@ export {
   EditorCommandItem,
   EditorCommandEmpty,
   useEditor,
-  type EditorInstance,
-  type JSONContent,
 } from "./components";
+
+export type { JSONContent } from "@tiptap/core";
+export { type Editor as EditorInstance } from "@tiptap/core";
+
+export type { 
+  EditorContentProps 
+} from "./components";
+
+export * from "./extensions/mathematics";
+export * from "./extensions/twitter";
 
 // Extensions
 export {
@@ -27,10 +34,10 @@ export {
   StarterKit,
   TaskItem,
   TaskList,
-  TiptapImage,
+  Image,
   TiptapUnderline,
   MarkdownExtension,
-  TextStyle,
+  TextStyleKit,
   Color,
   HighlightExtension,
   CustomKeymap,
