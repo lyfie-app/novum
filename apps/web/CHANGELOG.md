@@ -1,5 +1,16 @@
 # @lyfie/novum-demo-app
 
+## 2.0.0
+
+### Major Changes
+
+- feat: complete basic upgrade
+
+### Patch Changes
+
+- Updated dependencies
+  - @lyfie/novum@3.0.0
+
 ## 1.0.0
 
 ### Major Changes
